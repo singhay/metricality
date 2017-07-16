@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "metricality",
+    "description": "Realtime metrics recording platform",
+    "slug": "metricality",
+    "privacy": "public",
+    "sdkVersion": "18.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icons/app.png",
+    "loading": {
+      "icon": "./assets/icons/loading.png",
+      "hideExponentText": false
+    },
+    "ios": {
+          "bundleIdentifier": "com.singhay.metricality"
+    },
+    "android": {
+      "package": "com.singhay.metricality"
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4"]
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

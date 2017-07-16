@@ -1,4 +1,4 @@
-var App = React.createClass({
+var CounterList = React.createClass({
   render: function() {
     var _this = this;
     var createItem = function(item, index) {
@@ -23,7 +23,7 @@ var App = React.createClass({
   }
 });
 
-var TodoApp3 = React.createClass({
+var App = React.createClass({
   mixins: [ReactFireMixin],
 
   componentWillMount: function() {
@@ -85,12 +85,12 @@ var TodoApp3 = React.createClass({
           <input onChange={ this.onChange } value={ this.state.text } autofocus="true" />
           <button>{ 'Add #' + (this.state.items.length + 1) }</button>
         </form>
-        <TodoList3 
+        <CounterList 
           items={ this.state.items } 
           removeItem={ this.removeItem } 
           addCount={ this.addCount } 
           subCount={ this.subCount }
-          subCount={ this.resetCount }/>
+          resetCount={ this.resetCount }/>
       </div>
     );
   }

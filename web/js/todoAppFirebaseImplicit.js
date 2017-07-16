@@ -13,6 +13,7 @@ var TodoList3 = React.createClass({
           <td>
             <button onClick={ () => _this.props.addCount(item) }>+</button>
             <button onClick={ () => _this.props.subCount(item) }>-</button>
+            <button onClick={ () => _this.props.resetCount(item) }>Reset</button>
             <button onClick={ () => _this.props.removeItem(item['.key']) }>x</button>
           </td>
         </tr>
@@ -55,6 +56,14 @@ var TodoApp3 = React.createClass({
     });
   },
 
+  resetCount: function(item) {
+    var firebaseRef = firebase.database().ref('counters');
+    firebaseRef.child(item['.key']).update({
+      text: item.text,
+      count: 0
+    });
+  },
+
   handleSubmit: function(e) {
     e.preventDefault();
     if (this.state.text && this.state.text.trim().length !== 0) {
@@ -80,7 +89,8 @@ var TodoApp3 = React.createClass({
           items={ this.state.items } 
           removeItem={ this.removeItem } 
           addCount={ this.addCount } 
-          subCount={ this.subCount }/>
+          subCount={ this.subCount }
+          subCount={ this.resetCount }/>
       </div>
     );
   }

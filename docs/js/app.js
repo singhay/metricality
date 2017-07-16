@@ -19,7 +19,7 @@ var CounterList = React.createClass({
         </tr>
       );
     };
-    return <table>{ this.props.items.map(createItem) }</table>;
+    return (<table>{ this.props.items.map(createItem) }</table>);
   }
 });
 

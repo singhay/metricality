@@ -46,10 +46,16 @@ export default class App extends React.Component {
             Welcome to Metricality!
           </Text>
           <FontAwesome
-            name={'mixcloud'}
+            name={'plus-circle'}
             size={32}
             color="gray"
             onPress={() => { this._addItem() }}
+          />
+          <FontAwesome
+            name={'repeat'}
+            size={32}
+            color="gray"
+            onPress={() => { this._resetItems() }}
           />
         </View>
         <ListView
@@ -131,6 +137,21 @@ export default class App extends React.Component {
       ],
       'plain-text'
     );
+  }
+
+  _resetItems() {
+    this.itemsRef
+    .once('value')
+    .then(snapshot => {
+      snapshot.forEach(item => {
+        this.itemsRef
+        .child(item.key)
+        .update({
+          text: item.val().text,
+          count: 0
+        });
+      })
+    })
   }
 }
 

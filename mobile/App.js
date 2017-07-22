@@ -38,7 +38,9 @@ export default class App extends React.Component {
   render() {
     return (
       <Image
-        source={{uri: 'https://farm9.staticflickr.com/8196/8092429866_018899bcd7_b.jpg'}}
+        source={{uri: 'http://i.imgur.com/oC9IIPz.jpg'}}
+        // source={{uri: 'http://i.imgur.com/YNjE3Ht.jpg'}}
+        // source={{uri: 'https://farm9.staticflickr.com/8196/8092429866_018899bcd7_b.jpg'}}
         style={styles.container}
         blurRadius={4}>
         <View style={{flex: 0, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end'}}>
@@ -49,12 +51,14 @@ export default class App extends React.Component {
             name={'plus-circle'}
             size={32}
             color="gray"
+            style={{ paddingLeft: 20 }}
             onPress={() => { this._addItem() }}
           />
           <FontAwesome
             name={'repeat'}
             size={32}
             color="gray"
+            style={{ paddingLeft: 20 }}
             onPress={() => { this._resetItems() }}
           />
         </View>
@@ -166,7 +170,8 @@ const styles = StyleSheet.create({
   welcome: {
     marginTop: 30,
     fontSize: 21,
-    color: 'gray'
+    color: 'gray',
+    paddingRight: 40
   },
   list: {
     width: 170,

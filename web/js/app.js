@@ -35,6 +35,21 @@ var App = React.createClass({
     this.setState({text: e.target.value, count: 1});
   },
 
+  resetAll: function(e) {
+    this.firebaseRefs['items']
+    .once('value')
+    .then(snapshot => {
+      snapshot.forEach(item => {
+        this.firebaseRefs['items']
+        .child(item.key)
+        .update({
+          text: item.val().text,
+          count: 0
+        });
+      })
+    })
+  },
+
   removeItem: function(key) {
     var firebaseRef = firebase.database().ref('counters');
     firebaseRef.child(key).remove();
@@ -84,6 +99,7 @@ var App = React.createClass({
         <form onSubmit={ this.handleSubmit }>
           <input onChange={ this.onChange } value={ this.state.text } autofocus="true" />
           <button>{ 'Add #' + (this.state.items.length + 1) }</button>
+          <button type='reset' onClick={ this.resetAll }>{ 'Reset' }</button>
         </form>
         <CounterList 
           items={ this.state.items } 

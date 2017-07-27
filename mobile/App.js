@@ -38,7 +38,8 @@ export default class App extends React.Component {
   render() {
     return (
       <Image
-        source={{uri: 'http://i.imgur.com/oC9IIPz.jpg'}}
+        source={{uri: 'https://i.redd.it/iuz4wpql64cz.jpg'}}
+        // source={{uri: 'http://i.imgur.com/oC9IIPz.jpg'}}
         // source={{uri: 'http://i.imgur.com/YNjE3Ht.jpg'}}
         // source={{uri: 'https://farm9.staticflickr.com/8196/8092429866_018899bcd7_b.jpg'}}
         style={styles.container}

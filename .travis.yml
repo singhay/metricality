@@ -2,10 +2,11 @@ language:
   node_js
 node_js:
   - "7"
-before-deploy:
-  "cd web"
-deploy:
-  provider: firebase
-  token:
-    secure: LqCBG4prVvKCZfFRtIXWr337ZCZuNCg7D8H7RtB/Dn9uX3JvWXAImsDdouXIAx4IlaYjyGZ8x1sDv5fgswifUivebM9Xnm8E4P2IKivoFDum2C9QeAKuG6kBunYbPTjwmmXsNUNRcDNwGSVzYvtDvotWSKYvqg0f+aVX5jYneU9EPqkjd82X/VxF6vpJ3V6LrAlVzIFk1dU6pZuhR9kIB2H6/ScvNZKk+/ewOke4Y5ggpgOhigmBr37ilMwFgl2h1sIq/56HcFKOUdiMn0rg91xQn7S1a2q+NEuv4zNfjz5ZTPp4Te++Vui33EqlFDd2NA3hVZTTBgY/1lfRQWb0a/CG1dCfWRcOd6qhNI2s/X0LmlyJo53A3oA6qmZRMD4Kleqv1blQzrYjWrg1RyuatjQvH8OL7sbN5p9tKy6vizz1iYtgo3NBVW+vA7m5B6mP6ZuLkj0Qw1eWtuNQP3ik59GxMP0jrIi08mfXDi81O/l+r252ufCSN/UEi8GeTfDynYOMGAJbqi7spbqq8jIC69N1F/l/hSMzoZZiweRNmLcaeqmG8nL5sxWaIVcXyv4jgG1oEI99ov7LVvB9d6obfYURvzbd7MCgrpW8W07aylKxdME2JPmTcuAHUZDmuCeTvoVu/zSX7ffhb4fTINHcZdHapc57gipQxo73aVXmOy0=
-  project: metricality-f7392
+branches:
+  only:
+    - master
+before_script:
+  - cd web
+  - npm install -g firebase-tools
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN --project metricality-f7392

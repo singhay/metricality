@@ -1,6 +1,8 @@
 ## Metricality
 Realtime metrics recording app - [Live Demo](https://metricality-f7392.firebaseapp.com/)
-Metricality is a serverless app consists of two main components: Mobile and Web both using react
+
+Metricality is a serverless app consists of two main components: Mobile and Web both using reactJS
+
 Built out of frustation of outdated data states when the app goes offline!!
 
 ### Mobile

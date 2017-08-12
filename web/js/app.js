@@ -99,7 +99,7 @@ var App = React.createClass({
         <form onSubmit={ this.handleSubmit }>
           <input onChange={ this.onChange } value={ this.state.text } autofocus="true" />
           <button>{ 'Add #' + (this.state.items.length + 1) }</button>
-          <button type='reset' onClick={ this.resetAll }>{ 'Reset' }</button>
+          <button type='reset' onClick={ this.resetAll }>{ 'Reset All' }</button>
         </form>
         <CounterList 
           items={ this.state.items } 
